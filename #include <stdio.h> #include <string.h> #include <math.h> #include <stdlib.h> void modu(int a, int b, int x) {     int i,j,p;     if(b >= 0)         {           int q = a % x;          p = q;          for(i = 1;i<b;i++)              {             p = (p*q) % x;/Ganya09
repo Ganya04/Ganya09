@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+void modu(int a, int b, int x)
+{
+    int i,j,p;
+    if(b >= 0)
+        {
+
+         int q = a % x;
+         p = q;
+         for(i = 1;i<b;i++)
+             {
+            p = (p*q) % x;
+          //    printf("%d\n", p);
+         }
+         printf("%d\n", p);
+        }
+      else
+          {
+            j = a % x;
+            j = pow(j, abs(b));
+            j = j % x;
+            printf("%d\n", j);
+      }
+    return;
+}
+int main() {
+    int T,n,a,b,x;
+    scanf("%d", &n);
+    while(n--)
+        {
+        scanf("%d %d %d", &a, &b, &x);
+        modu(a,b,x);
+        }
+    return 0;
+}
